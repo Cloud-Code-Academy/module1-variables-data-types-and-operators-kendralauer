@@ -156,7 +156,6 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is in the past, False otherwise.
      */
     public static Boolean isDateInPast(Date dt) {
-        Boolean result;
         if (dt < Date.today() ) {
             return true;
             } else {
@@ -174,7 +173,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is today or in the future, False otherwise.
      */
     public static Boolean isDateTodayOrFuture(Date dt) {
-        if (dt > Date.today()) {
+        if (dt >= Date.today()) {
             return true;
             } else {
             return false;
