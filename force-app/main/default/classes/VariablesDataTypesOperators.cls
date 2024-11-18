@@ -95,7 +95,11 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the number is even, False otherwise.
      */
     public static Boolean isEven(Integer num) {
-        return Math.mod(num, 2) ==0;
+        if (Math.mod(num, 2) ==0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -106,7 +110,11 @@ public with sharing class VariablesDataTypesOperators {
      * @return true if the number is positive, false otherwise.
      */
     public static Boolean isPositive(Integer num) {
-        return num > 0; 
+        if (num >= 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -118,7 +126,8 @@ public with sharing class VariablesDataTypesOperators {
      * @return The concatenated string.
      */
     public static String concatenateStrings(String str1, String str2) {
-        return str1 + str2; 
+        String result = str1 + str2; 
+        return result;
     }
 
 	/**
@@ -133,7 +142,8 @@ public with sharing class VariablesDataTypesOperators {
 	 * @return The complete sentence as a single String.
 	 */
 	public static String createSentence(String noun, String verb, String endingPunctuation) {
-		return 'The ' + noun + ' is ' + verb + endingPunctuation; 
+		String mySentence = 'The ' + noun + ' is ' + verb + endingPunctuation; 
+        return mySentence;
 	}
 
     /**
@@ -146,8 +156,13 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is in the past, False otherwise.
      */
     public static Boolean isDateInPast(Date dt) {
-        return dt < Date.today();
-    }
+        Boolean result;
+        if (dt < Date.today() ) {
+            return true;
+            } else {
+            return false;
+        }
+    }  
 
     /**
      * Question 10
@@ -159,8 +174,12 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is today or in the future, False otherwise.
      */
     public static Boolean isDateTodayOrFuture(Date dt) {
-        return dt >= Date.today(); 
-    }
+        if (dt > Date.today()) {
+            return true;
+            } else {
+            return false;
+        }
+    }    
 
     /**
      * Question 11
@@ -188,7 +207,8 @@ public with sharing class VariablesDataTypesOperators {
      * @return The average of the three numbers.
      */
     public static Double averageOfThreeNumbers(Integer a, Integer b, Integer c) {
-        return (a + b +c) / 3;
+        Integer average = (a + b + c) / 3;
+        return average;
     }
 
     /**
@@ -203,7 +223,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Integer adjustOrderOfOperations1(Integer a, Integer b, Integer c) {
         Integer result = (a + b) * c;
-        return (a + b) * c;
+        return result;
     }
 
     /**
@@ -213,7 +233,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Integer adjustOrderOfOperations2() {
         Integer answer = 48 -((15 + 5) * 2);
-        return 48 -((15 + 5) * 2);
+        return answer;
     }
 
     /**
@@ -246,7 +266,8 @@ public with sharing class VariablesDataTypesOperators {
         final Double SUBTRACT_FACTOR = 32.0;
         final Double MULTIPLY_FACTOR = 5.0;
         final Double DIVIDE_FACTOR = 9.0;
-        return (fahrenheit - SUBTRACT_FACTOR) * MULTIPLY_FACTOR / DIVIDE_FACTOR;
+    Double celsius = (fahrenheit - SUBTRACT_FACTOR) * MULTIPLY_FACTOR / DIVIDE_FACTOR;
+        return celsius;
     }
 
     
@@ -276,7 +297,9 @@ public with sharing class VariablesDataTypesOperators {
      * @return A Decimal representing the weekly paycheck.
      */
     public static Decimal calculateWeeklyPaycheck(Decimal hourlyRate, Double numberOfHours) {
-        return hourlyRate * numberOfHours;
+        Decimal weeklyPaycheck = hourlyRate * numberOfHours;
+        return weeklyPaycheck;
+
     }
 
     /**
@@ -290,7 +313,8 @@ public with sharing class VariablesDataTypesOperators {
      * @return A Decimal representing the monthly paycheck.
      */
     public static Decimal calculateMonthlyPaycheck(Decimal hourlyRate, Double numberOfHours) {
-        return hourlyRate * numberOfHours * 4;
+        Decimal monthlyPaycheck = hourlyRate * numberOfHours * 4;
+        return monthlyPaycheck;
     }
 
     /**
@@ -304,6 +328,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return The total cost after applying the sales tax.
      */
     public static Decimal calculateTotalCost(Decimal pricePerUnit, Integer numberOfUnits, Decimal salesTaxRate) {
-        return (pricePerUnit * numberOfUnits) * (1 + salesTaxRate);
+        Decimal totalCost = (pricePerUnit * numberOfUnits) * (1 + salesTaxRate);
+        return totalcost;
     }
 }
